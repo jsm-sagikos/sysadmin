@@ -11,7 +11,7 @@ Log in as root.
 1. ``pico /etc/ssh/sshd_config``
       * ``ClientAliveInterval 10``
       * ``ClientAliveCountMax 30``
-3. ``apt update && apt upgrade -y && apt install sudo git ufw screen sqlite php-zip letsencrypt -y``
+3. ``apt update && apt upgrade -y && apt install sudo git ufw screen sqlite php-zip letsencrypt dnsutils -y``
 12. ``sudo ufw allow 22/tcp``
 13. ``sudo ufw allow 20,21,25,53,80,110,143,587,953,993,995,443,6277,10000,20000/tcp``
 14. ``sudo ufw allow 53,10000,20000/udp``
