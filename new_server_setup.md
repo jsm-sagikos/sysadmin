@@ -46,7 +46,27 @@ Log in as root.
 1. https://desld0001:10000/fail2ban/?xnavigation=1
      * Start at boot? Yes. Then click the button.
 1. Virtualmin > System Settings > Account Plans > Default Plan > Limit on number of virtual servers: *Unlimited*. Save.
-2. Virtualmin > System Settings > Features and Plugins > Check *SQLite Databases* and *Git repositories*.
+2. Virtualmin > System Settings > Features and Plugins > Check *SQLite Databases* and *Git repositories*. Save.
+3. Virtualmin > System Settings > Server Templates > Default Settings > 
+     4. Administration user > Chroot jail new domain Unix users: Yes. Save and next.
+     5. BIND DNS domain > 
+          1. Address records for new domains: uncheck m.${DOM}.
+          2. Ensure *Additionally manually configured nameservers* is correct: *ns2.sagikos.com*.
+          3. Create DNSSEC key and sign new domains: Yes. 
+          4. Save and next.
+     6. Mail for domain >
+          1. Email message to send upon server creation: Message below ..
+          2. Default quota for mail users: 300 MiB.
+     7. Spam filtering >
+          1. Automatically delete old spam: 30 days.
+4. Virtualmin > System Settings > Virtualmin Configuration >
+     1. SSL Settings >
+          1. Redirect HTTP to HTTPS by default: Yes. Save.
+5. Virtualmin > Email Settings > Mail Client Configuration: Enable mail client autoconfiguration: Yes. Save.
+6. Virtualmin > Email Settings > New Mailbox Email > 
+     1. Send email: Yes.
+     2. Send email to: check both *User's mailbox* and *Virtual server owner*. Save.
+7. Virtualmin > Email Settings > Updated Mailbox Email: Send email to: check both *User's mailbox* and *Virtual server owner*. Save.
 
 ## User Customization
 For each user you want this:
