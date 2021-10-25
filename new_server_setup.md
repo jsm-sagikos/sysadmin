@@ -13,10 +13,11 @@ Log in as root.
 
       ``SHELL=/bin/bash``
 
-3. ``apt update && apt upgrade -y && apt install sudo -y``
-4. ``groupadd sagikos``
-5. ``useradd sagikos_oper -m -g sagikos -G sudo``
-6. ``passwd sagikos_oper``. 
+3. ``apt update && apt upgrade -y && apt install sudo git -y``
+4. ``sh -c "$(wget https://raw.github.com/ohmybash/oh-my-bash/master/tools/install.sh -O -)"``
+5. ``groupadd sagikos``
+6. ``useradd sagikos_oper -m -g sagikos -G sudo``
+7. ``passwd sagikos_oper``. 
 
       Use the above password generator link again. Obviously with a separate password.
 1. ``reboot``
@@ -25,3 +26,5 @@ Log in as root.
       generate your local key to connect without password to the new server. use a blank password if you want.
 
 1. ``ssh-copy-id sagikos_oper@desld0001.sagikos.com``
+1. ``ssh sagikos_oper@desld0001.sagikos.com``
+1. ``sh -c "$(wget https://raw.github.com/ohmybash/oh-my-bash/master/tools/install.sh -O -)"``
