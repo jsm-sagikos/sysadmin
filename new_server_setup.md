@@ -18,11 +18,12 @@ Log in as root.
 6. ``pico ~/.bashrc``
 7. Change ``OSH_THEME="font"`` to ``OSH_THEME="powerline"``
 8. Add at the bottom: ``alias sai="sudo apt install -y"``
-9. ``sudo ufw allow 22``
-10. ``sudo ufw enable``
-11. ``groupadd sagikos``
-12. ``useradd sagikos_oper -m -g sagikos -G sudo``
-13. ``passwd sagikos_oper``. 
+9. ``sudo ufw allow 20,21,22,25,53,80,110,143,587,953,993,995,443,6277,10000,20000/tcp``
+10. ``sudo ufw allow 53,10000,20000/udp``
+11. ``sudo ufw enable``
+12. ``groupadd sagikos``
+13. ``useradd sagikos_oper -m -g sagikos -G sudo``
+14. ``passwd sagikos_oper``. 
 
       Use the above password generator link again. Obviously with a separate password.
 1. ``reboot``
