@@ -27,49 +27,65 @@ Log in as root.
 23. ``reboot``
 28. ``wget https://software.virtualmin.com/gpl/scripts/install.sh``
 29. ``sudo /bin/sh install.sh -f``
-33. Open https://desld0001.sagikos.com:10000 in a local web browser and log in as ``sagikos_oper`` and the generated password.
-1. Update the password restrictions per corporate policy at https://desld0001.sagikos.com:10000/acl/edit_pass.cgi?xnavigation=1 (Webmin > Webmin Users > Password Restrictions:
-
+30. Open https://desld0001.sagikos.com:10000 in a local web browser and log in as ``sagikos_oper`` and the generated password.
+31. Update the password restrictions per corporate policy at https://desld0001.sagikos.com:10000/acl/edit_pass.cgi?xnavigation=1 (Webmin > Webmin Users > Password Restrictions:
      1.  Minimum password length: 15.
-     1.  Days before password must be changed: 90.
-     1.  Days before un-changed password locks account: 7.
-     1.  Disallow passwords containing username: Yes.
-     1.  Disallow dictionary word passwords: Yes.
-     1.  Number of old passwords to reject: 1 passwords.
-1. Webmin > Webmin users > *Create a New Webmin group*.
+     2.  Days before password must be changed: 90.
+     3.  Days before un-changed password locks account: 7.
+     4.  Disallow passwords containing username: Yes.
+     5.  Disallow dictionary word passwords: Yes.
+     6.  Number of old passwords to reject: 1 passwords.
+32. Webmin > Webmin users > *Create a New Webmin group*.
      1. Group name: *opers*
      2. Available Webmin modules: *Select all*
-1. Webmin > Webmin users > *Create a New Webmin group*.
+33. Webmin > Webmin users > *Create a New Webmin group*.
      1. Group name: *employees*
-1. Webmin > Webmin users > *Create a New Webmin group*.
+34. Webmin > Webmin users > *Create a New Webmin group*.
      1. Group name: *contractors*
-1. https://desld0001:10000/fail2ban/?xnavigation=1
+35. https://desld0001:10000/fail2ban/?xnavigation=1
      * Start at boot? Yes. Then click the button.
-1. Virtualmin > System Settings > Account Plans > Default Plan > Limit on number of virtual servers: *Unlimited*. Save.
-2. Virtualmin > System Settings > Features and Plugins > Check *SQLite Databases* and *Git repositories*. Save.
-3. Virtualmin > System Settings > Server Templates > Default Settings > 
-     4. Administration user > Chroot jail new domain Unix users: Yes. Save and next.
-     5. BIND DNS domain > 
+36. Virtualmin > System Settings > Account Plans > Default Plan > Limit on number of virtual servers: *Unlimited*. Save.
+37. Virtualmin > System Settings > Features and Plugins > Check *SQLite Databases* and *Git repositories*. Save.
+38. Virtualmin > System Settings > Server Templates > Default Settings > 
+     1. Administration user > Chroot jail new domain Unix users: Yes. Save and next.
+     2. BIND DNS domain > 
           1. Address records for new domains: uncheck m.${DOM}.
           2. Ensure *Additionally manually configured nameservers* is correct: *ns2.sagikos.com*.
           3. Create DNSSEC key and sign new domains: Yes. 
           4. Save and next.
-     6. Mail for domain >
+     3. Mail for domain >
           1. Email message to send upon server creation: Message below ..
           2. Default quota for mail users: 300 MiB.
-     7. Spam filtering >
+     4. Spam filtering >
           1. Automatically delete old spam: 30 days.
-4. Virtualmin > System Settings > Virtualmin Configuration >
+39. Virtualmin > System Settings > Virtualmin Configuration >
      1. SSL Settings >
           1. Redirect HTTP to HTTPS by default: Yes. Save.
-5. Virtualmin > Email Settings > Mail Client Configuration: Enable mail client autoconfiguration: Yes. Save.
-6. Virtualmin > Email Settings > New Mailbox Email > 
-     1. Send email: Yes.
-     2. Send email to: check both *User's mailbox* and *Virtual server owner*. Save.
-7. Virtualmin > Email Settings > Updated Mailbox Email: Send email to: check both *User's mailbox* and *Virtual server owner*. Save.
+40. Virtualmin > Email Settings > 
+     1. Mail Client Configuration: Enable mail client autoconfiguration: Yes. Save.
+     2. New Mailbox Email > 
+          1. Send email: Yes.
+          2. Send email to: check both *User's mailbox* and *Virtual server owner*. Save.
+     3. Updated Mailbox Email: Send email to: check both *User's mailbox* and *Virtual server owner*. Save.
+
+41. Virtualmin > Create Virtual Server.
+     1. Domain name: *desld0001.sagikos.com*.
+     2. Description: *default virtual server*.
+     3. Administration password: Generate new password.
+     4. Enabled features:
+          * Setup DNS zone
+          * Setup Apache website
+          * Setup Apache SSL website
+          * Create MariaDB database
+          * Accept mail for domain
+          * Setup spam filtering
+          * Setup virus filtering
+          * Setup Webalizer for web logs
+          * Create Webmin login
+          * Allow Git repositories.
 
 ## User Customization
-For each user you want this:
+For each unix user you want to customize:
 1. ``sh -c "$(wget https://raw.github.com/ohmybash/oh-my-bash/master/tools/install.sh -O -)"``
 1. ``pico ~/.bashrc``
      * Change ``OSH_THEME="font"`` to ``OSH_THEME="powerline"`` 
