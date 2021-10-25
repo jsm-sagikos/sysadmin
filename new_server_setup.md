@@ -11,7 +11,7 @@ Log in as root.
 1. ``pico /etc/ssh/sshd_config``
       * ``ClientAliveInterval 10``
       * ``ClientAliveCountMax 30``
-3. ``apt update && apt upgrade -y && apt install sudo git ufw screen -y``
+3. ``apt update && apt upgrade -y && apt install sudo git ufw screen sqlite -y``
 12. ``sudo ufw allow 22/tcp``
 13. ``sudo ufw allow 20,21,25,53,80,110,143,587,953,993,995,443,6277,10000,20000/tcp``
 14. ``sudo ufw allow 53,10000,20000/udp``
@@ -29,13 +29,24 @@ Log in as root.
 29. ``sudo /bin/sh install.sh -f``
 33. Open https://desld0001.sagikos.com:10000 in a local web browser and log in as ``sagikos_oper`` and the generated password.
 1. Update the password restrictions per corporate policy at https://desld0001.sagikos.com:10000/acl/edit_pass.cgi?xnavigation=1 (Webmin > Webmin Users > Password Restrictions:
-     2.  Minimum password length: 15.
-     3.  Days before password must be changed: 90.
-     4.  Days before un-changed password locks account: 7.
-     5.  Disallow passwords containing username: Yes.
-     6.  Disallow dictionary word passwords: Yes.
-     7.  Number of old passwords to reject: 1 passwords.
 
+     1.  Minimum password length: 15.
+     1.  Days before password must be changed: 90.
+     1.  Days before un-changed password locks account: 7.
+     1.  Disallow passwords containing username: Yes.
+     1.  Disallow dictionary word passwords: Yes.
+     1.  Number of old passwords to reject: 1 passwords.
+1. Webmin > Webmin users > *Create a New Webmin group*.
+     1. Group name: *opers*
+     2. Available Webmin modules: *Select all*
+1. Webmin > Webmin users > *Create a New Webmin group*.
+     1. Group name: *employees*
+1. Webmin > Webmin users > *Create a New Webmin group*.
+     1. Group name: *contractors*
+1. https://desld0001:10000/fail2ban/?xnavigation=1
+     * Start at boot? Yes. Then click the button.
+1. Virtualmin > System Settings > Account Plans > Default Plan > Limit on number of virtual servers: *Unlimited*. Save.
+2. Virtualmin > System Settings > Features and Plugins > Check *SQLite Databases* and *Git repositories*.
 
 ## User Customization
 For each user you want this:
