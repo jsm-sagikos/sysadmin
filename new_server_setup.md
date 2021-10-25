@@ -10,6 +10,9 @@ Log in as root.
 
       edit hostname for ipv4 and ipv6.
 
+## Update packages and install sudo
+1. ``apt update && apt upgrade -y``
+
 ## Create the Sagikos group
 1. ``groupadd sagikos``
 
