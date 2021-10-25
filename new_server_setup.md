@@ -15,9 +15,11 @@ Log in as root.
 
 3. ``apt update && apt upgrade -y && apt install sudo git -y``
 4. ``sh -c "$(wget https://raw.github.com/ohmybash/oh-my-bash/master/tools/install.sh -O -)"``
-5. ``groupadd sagikos``
-6. ``useradd sagikos_oper -m -g sagikos -G sudo``
-7. ``passwd sagikos_oper``. 
+5. ``pico ~/.bashrc``
+6. Change ``OSH_THEME="font"`` to ``OSH_THEME="powerline"``
+7. ``groupadd sagikos``
+8. ``useradd sagikos_oper -m -g sagikos -G sudo``
+9. ``passwd sagikos_oper``. 
 
       Use the above password generator link again. Obviously with a separate password.
 1. ``reboot``
