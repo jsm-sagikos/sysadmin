@@ -1,5 +1,6 @@
 # New Server Setup in Sagikos
 1. Log in as root.
+2. passwd, use at least 15 characters strong generated password at https://passwordsgenerator.net/?length=16&symbols=1&numbers=1&lowercase=1&uppercase=1&similar=1&ambiguous=1&client=1&autoselect=1
 
 ## Set hostname
 2. hostnamectl set-hostname desld0001
