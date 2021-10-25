@@ -13,13 +13,16 @@ Log in as root.
 
       ``SHELL=/bin/bash``
 
-3. ``apt update && apt upgrade -y && apt install sudo git -y``
-4. ``sh -c "$(wget https://raw.github.com/ohmybash/oh-my-bash/master/tools/install.sh -O -)"``
-5. ``pico ~/.bashrc``
-6. Change ``OSH_THEME="font"`` to ``OSH_THEME="powerline"``
-7. ``groupadd sagikos``
-8. ``useradd sagikos_oper -m -g sagikos -G sudo``
-9. ``passwd sagikos_oper``. 
+3. ``apt update && apt upgrade -y && apt install sudo git ufw -y``
+5. ``sh -c "$(wget https://raw.github.com/ohmybash/oh-my-bash/master/tools/install.sh -O -)"``
+6. ``pico ~/.bashrc``
+7. Change ``OSH_THEME="font"`` to ``OSH_THEME="powerline"``
+8. Add at the bottom: ``alias sai="sudo apt install -y"``
+9. ``sudo ufw allow 22``
+10. ``sudo ufw enable``
+11. ``groupadd sagikos``
+12. ``useradd sagikos_oper -m -g sagikos -G sudo``
+13. ``passwd sagikos_oper``. 
 
       Use the above password generator link again. Obviously with a separate password.
 1. ``reboot``
