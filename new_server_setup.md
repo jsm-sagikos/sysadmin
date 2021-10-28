@@ -29,7 +29,7 @@ Log in as root.
 25. ``mkdir btop``
 26. ``tar -xjvf btop-*.tbz --one-top-level``
 27. cd in to that new directory.
-28. ``make install``
+28. ``sudo make install``
 29. ``wget https://software.virtualmin.com/gpl/scripts/install.sh``
 30. ``sudo /bin/sh install.sh -f``
 31. Open https://desld0001.sagikos.com:10000 in a local web browser and log in as ``sagikos_oper`` and the generated password.
