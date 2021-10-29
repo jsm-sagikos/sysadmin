@@ -17,13 +17,10 @@ Log in as root.
 14. ``sudo ufw allow 53,10000,20000/udp``
 15. ``sudo ufw enable``
 16. ``groupadd sagikos``
-17. ``useradd sagikos_oper -m -g sagikos -G sudo``
 18. Create a new oper account for yourself. Replace xy1234 with your Sagikos employee username:
      1. ``useradd xy1234_oper -m -g sagikos -G sudo``
-20. ``passwd sagikos_oper``. 
-      * Use the above password generator link again. Obviously with a separate password.
 21. ``passwd xy1234_oper``. 
-     * Again use the generator, don't re-use.       
+      * Use the above password generator link again. Obviously with a separate password.
 23. ``reboot``
 24. From https://github.com/aristocratos/btop/releases/latest download x86_64 file.
 25. ``mkdir btop``
