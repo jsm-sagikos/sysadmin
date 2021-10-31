@@ -103,3 +103,11 @@ For each unix user you want to customize:
 31. ``source $HOME/.cargo/env``
 32. ``cargo install lsd``
 
+## Docker
+1. ``apt -y install ca-certificates curl gnupg lsb-release``
+2. ``curl -fsSL https://download.docker.com/linux/debian/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg``
+3. ``echo \
+  "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/debian $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null``
+4. ``apt update``
+5. ``apt -y install docker-ce docker-ce-cli containerd.io``
+6. 
