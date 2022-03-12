@@ -12,21 +12,20 @@ Log in as root.
       * ``ClientAliveInterval 10``
       * ``ClientAliveCountMax 30``
 3. ``apt update && apt upgrade -y && apt install sudo git ufw screen sqlite php-zip letsencrypt dnsutils bzip2 make -y``
-12. ``sudo ufw allow 22/tcp``
-13. ``sudo ufw allow 20,21,25,53,80,110,143,587,953,993,995,443,6277,10000,20000/tcp``
+13. ``sudo ufw allow 20,21,22,25,53,80,110,143,587,953,993,995,443,6277,10000,20000/tcp``
 14. ``sudo ufw allow 53,10000,20000/udp``
 15. ``sudo ufw enable``
 16. ``groupadd sagikos``
-18. Create a new oper account for yourself. Replace xy1234 with your Sagikos employee username:
-     1. ``useradd xy1234_oper -m -g sagikos -G sudo``
-21. ``passwd xy1234_oper``. 
+18. Create a new sudo account for yourself. Replace xy1234 with your Sagikos employee username:
+     1. ``useradd xy1234 -m -g sagikos -G sudo``
+21. ``passwd xy1234``. 
       * Use the above password generator link again. Obviously with a separate password.
 23. ``reboot``
 24. From https://github.com/aristocratos/btop/releases/latest download x86_64 file.
-25. ``mkdir btop``
-26. ``tar -xjvf btop-*.tbz --one-top-level``
-27. cd in to that new directory.
-28. ``sudo make install``
+25. ``tar -xjvf btop-*.tbz --one-top-level``
+26. cd in to that new directory.
+27. ``sudo make install``
+28. ``cd`` to get into your home directory.
 29. ``wget https://software.virtualmin.com/gpl/scripts/install.sh``
 30. ``sudo /bin/sh install.sh -f``
 31. Open https://desld0001.sagikos.com:10000 in a local web browser and log in as ``sagikos_oper`` and the generated password.
