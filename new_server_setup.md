@@ -12,10 +12,11 @@ Log in as root.
       * ``ClientAliveInterval 10``
       * ``ClientAliveCountMax 30``
 3. ``apt update && apt upgrade -y && apt install sudo git ufw screen sqlite php-zip letsencrypt dnsutils bzip2 make -y``
-13. ``sudo ufw allow 20,21,22,25,53,80,110,143,587,953,993,995,443,6277,10000,20000/tcp``
-14. ``sudo ufw allow 53,10000,20000/udp``
-15. ``sudo ufw enable``
-16. ``groupadd sagikos``
+13. ``ufw allow 20,21,22,25,53,80,110,143,587/tcp``
+14. ``ufw allow 953,993,995,443,6277,10000,20000/tcp``
+15. ``ufw allow 53,10000,20000/udp``
+16. ``ufw enable``
+17. ``groupadd sagikos``
 18. Create a new sudo account for yourself. Replace xy1234 with your Sagikos employee username:
      1. ``useradd xy1234 -m -g sagikos -G sudo``
 21. ``passwd xy1234``. 
