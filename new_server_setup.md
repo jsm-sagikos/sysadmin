@@ -88,13 +88,13 @@ Log in as root.
 
 ## User Customization
 For each unix user you want to customize:
-1. ``sh -c "$(wget https://raw.github.com/ohmybash/oh-my-bash/master/tools/install.sh -O -)"``
-1. ``pico ~/.bashrc``
+1. ``bash -c "$(wget https://raw.githubusercontent.com/ohmybash/oh-my-bash/master/tools/install.sh -O -)"``
+2. ``pico ~/.bashrc``
      * Change ``OSH_THEME="font"`` to ``OSH_THEME="powerline"`` 
      * Add the bottom add:
           * ``alias sai="sudo apt install -y"``
           * ``alias ls='lsd'``
-1. ``source ~/.bashrc``
+3. ``source ~/.bashrc``
 24. On your local machine:
      * ``ssh-keygen``      
      * ``ssh-copy-id sagikos_oper@desld0001.sagikos.com``
